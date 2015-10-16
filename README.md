@@ -1,5 +1,5 @@
 
-##1. Make sure you include the Fabric maven repo, and the Fabric gradle to the classpath
+##1. Add the Fabric Maven repo, and the Fabric gradle to the classpath
 
 _build.gradle_
 ```gradle
