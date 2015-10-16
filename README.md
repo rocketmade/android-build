@@ -87,6 +87,8 @@ private void setupFabric() {
 
 ##9. Distribute
 
+From the terminal or the CI server, run:
+
 ```bash
 ./gradlew assembleRelease crashlyticsUploadDistributionRelease
 
