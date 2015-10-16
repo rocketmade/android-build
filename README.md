@@ -83,3 +83,10 @@ private void setupFabric() {
     Fabric.with(this, crashlyticsKit);
 }
 ```
+
+##9. Distribute
+
+```bash
+./gradlew assembleRelease crashlyticsUploadDistributionRelease
+
+```
