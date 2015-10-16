@@ -18,6 +18,7 @@ buildscript {
 
 _build.gradle_
 ```gradle
+apply plugin: 'com.android.application'
 apply plugin: 'io.fabric'
 ```
 
