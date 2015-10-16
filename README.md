@@ -1,5 +1,5 @@
 
-##1 Make sure you include the fabric maven repo, and the fabric gradle to the classpath, like so:
+##1. Make sure you include the Fabric maven repo, and the Fabric gradle to the classpath
 
 _build.gradle_
 ```gradle
@@ -14,14 +14,14 @@ buildscript {
 }
 ```
 
-##2 Add the fabric plugin AFTER the com.android.application plugin
+##2. Add the Fabric plugin AFTER the com.android.application plugin
 
 _build.gradle_
 ```gradle
 apply plugin: 'io.fabric'
 ```
 
-##3 Add the Fabric Maven repository below the apply plugin command
+##3. Add the Fabric Maven repository below the apply plugin command
 
 _build.gradle_
 ```gradle
@@ -31,7 +31,7 @@ repositories {
 
 ```
 
-##4 Add the release notes, and the name of the distribution group
+##4. Add the release notes, and the name of the distribution group
 
 _build.gradle_
 ```gradle
@@ -42,7 +42,7 @@ ext {
 }
 ```
 
-##5 Add the crashlytics sdk to the gradle dependencies
+##5. Add the Crashlytics sdk to the gradle dependencies
 
 _build.gradle_
 ```gradle
@@ -51,7 +51,7 @@ compile('com.crashlytics.sdk.android:crashlytics:+@aar') {
 }
 ```
 
-##6 Create a fabric.properties file in the app/ directory, include the info:
+##6. Create a Fabric.properties file in the app/ directory, include the info:
 
 _fabric.properties_
 ```ini
@@ -60,7 +60,7 @@ apiKey=YOUR_API_KEY
 ```
 
 _AndroidManifest.xml_
-##7 Include the API key in your AndroidManifest.xml
+##7. Include the API key in your AndroidManifest.xml
 
 ```xml
 <meta-data
@@ -69,7 +69,7 @@ _AndroidManifest.xml_
 
 ```
 
-##8 Start crashlytics in your Application subclass onCreate
+##8. Start Crashlytics in your Application subclass onCreate
 
 _MyApplication.java_
 ```java
