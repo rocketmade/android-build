@@ -1,0 +1,41 @@
+#built application files
+*.apk
+*.ap_
+
+# files for the dex VM
+*.dex
+
+# Java class files
+*.class
+
+# generated files
+bin/
+gen/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Windows thumbnail db
+Thumbs.db
+
+# OSX files
+.DS_Store
+
+# Eclipse project files
+.classpath
+.project
+
+# Intellij project files
+*.iws
+.idea/*
+/build
+*.iml
+
+# AndroidStudio project files
+gobe-games-android.iml
+
+# gradle
+.gradle
+
+# debug file for credentials. This will be different on each machine
+config.properties
