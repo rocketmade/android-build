@@ -1,3 +1,6 @@
+#Rocketmade Jenkins CI Setup Guide for Android
+
+Distributing builds for Android will rely on the Crashlytics framework.
 
 ##1. Add the Fabric Maven repo, and the Fabric gradle to the classpath
 
