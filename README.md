@@ -85,11 +85,29 @@ private void setupFabric() {
 }
 ```
 
-##9. Distribute
+##9. Create a new Jenkins project
 
-From the terminal or the CI server, run:
+* Log in to the CI server, Click "New Item", and enter the Project name with Freestyle project selected
+
+* On the next page, enter the Project Name and Description
+
+* Under the Source Code Management section, select git and enter the repository URL. For example, `git@github.com:organization-name/repo-name.git`
+
+* Under branches to build, enter `**dev`
+
+* For the repository browser, you can use `githubweb`
+
+* Under the Post-build Actions section, select the box for "Push Only If Build Succeeds", with the Branch to push set to `dev` and Target remote name set to `origin`
+
+##10. Distribute
+
+Enter the following script into the `Execute shell` section:
 
 ```bash
 ./gradlew assembleRelease crashlyticsUploadDistributionRelease
 
 ```
+
+##11. Save the Jenkins project
+
+That's it! The CI server now has everything it needs to build the project.
