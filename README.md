@@ -98,16 +98,16 @@ private void setupFabric() {
 
 * Under branches to build, enter `**dev`
 
-* For the repository browser, you can use `githubweb`
-
-* Under the Post-build Actions section, select the box for "Push Only If Build Succeeds", with the Branch to push set to `dev` and Target remote name set to `origin`
-
 ##10. Distribute
 
 Enter the following script into the `Execute shell` section:
 
 ```bash
-./gradlew assembleRelease crashlyticsUploadDistributionRelease
+export ANDROID_HOME="/Users/ci/Android/android-sdk-macosx"
+export JAVA_HOME=$(/usr/libexec/java_home)
+
+./gradlew assembleDebug
+./gradlew crashlyticsUploadDistributionDebug
 
 ```
 
