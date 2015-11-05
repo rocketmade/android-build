@@ -128,7 +128,7 @@ Add the following script to your project root:
 # Usage: run ./ci.sh to trigger a CI Build.
 # Get $JENKINS_USERNAME and $JENKINS_API_TOKEN from environment (store in a .env file and use AutoEnv)
 
-JENKINS_URL="ci.rocketmade.com:8080/job/Fortify%20Android%20-%20Build%20Dev/build?token=fortifybuildtoken"
+JENKINS_URL="JENKINS_URL/job/PROJECT_NAME/build?token=BUILD_TOKEN" # replace with your URL
 curl -u $JENKINS_USERNAME:$JENKINS_API_TOKEN $JENKINS_URL
 ```
 
