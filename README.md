@@ -119,11 +119,11 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 That's it! The CI server now has everything it needs to build the project.
 
 
-## Trigger CI builds from the command line
+##12. Trigger CI builds from the command line
 
 Create a file name `ci.sh` in your project root. Add the following script:
 
-_ci.sh_
+`_ci.sh_`
 ```bash
 #!/bin/bash
 
@@ -136,7 +136,7 @@ curl -u $JENKINS_USERNAME:$JENKINS_API_TOKEN $JENKINS_URL
 
 and add the following to a `.env` file in the project root:
 
-_.env_
+`_.env_`
 ```bash
 export JENKINS_USERNAME="YOUR-USERNAME-GOES-HERE"
 export JENKINS_API_TOKEN="YOUR-API-TOKEN-GOES-HERE"
