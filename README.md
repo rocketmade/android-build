@@ -35,14 +35,29 @@ repositories {
 
 ```
 
-##4. Add the release notes, and the name of the distribution group
+##4. Add the release notes, and the name of the distribution group to `buildTypes` or `productFlavors`
 
 _build.gradle_
 ```gradle
 def releaseNotes = 'git log --pretty=format:"%s" --since "yesterday"'.execute([], project.rootDir).text.trim()
-ext {
-    betaDistributionReleaseNotes = releaseNotes
-    betaDistributionGroupAliases = FABRIC_GROUP_ALIAS
+
+android {
+  buildTypes {
+      release {
+        ...
+      }
+      debug {
+        ...
+      }
+      staging {
+          debuggable false
+          applicationIdSuffix ".stg"
+          versionNameSuffix " Stg"
+          signingConfig signingConfigs.release
+          ext.betaDistributionReleaseNotes=releaseNotes
+          ext.betaDistributionGroupAliases="INSERT DISTRIBUTION GROUP NAME HERE"
+      }
+  }
 }
 ```
 
