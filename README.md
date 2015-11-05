@@ -105,6 +105,7 @@ private void setupFabric() {
 Enter the following script into the `Execute shell` section:
 
 ```bash
+# These might already be set, but set them to your ANDROID_HOME and JAVA_HOME locations if not
 export ANDROID_HOME="/Users/ci/Android/android-sdk-macosx"
 export JAVA_HOME=$(/usr/libexec/java_home)
 
@@ -120,8 +121,9 @@ That's it! The CI server now has everything it needs to build the project.
 
 ## Trigger CI builds from the command line
 
-Add the following script to your project root:
+Create a file name `ci.sh` in your project root. Add the following script:
 
+_ci.sh_
 ```bash
 #!/bin/bash
 
@@ -134,6 +136,7 @@ curl -u $JENKINS_USERNAME:$JENKINS_API_TOKEN $JENKINS_URL
 
 and add the following to a `.env` file in the project root:
 
+_.env_
 ```bash
 export JENKINS_USERNAME="YOUR-USERNAME-GOES-HERE"
 export JENKINS_API_TOKEN="YOUR-API-TOKEN-GOES-HERE"
