@@ -98,6 +98,8 @@ private void setupFabric() {
 
 * Under branches to build, enter `**dev`
 
+* If you want to be able to trigger builds from the command line, check the box `Trigger builds remotely`  and enter an authentication token of your choosing.
+
 ##10. Distribute
 
 Enter the following script into the `Execute shell` section:
@@ -114,3 +116,31 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 ##11. Save the Jenkins project
 
 That's it! The CI server now has everything it needs to build the project.
+
+
+## Trigger CI builds from the command line
+
+Add the following script to your project root:
+
+```bash
+#!/bin/bash
+
+# Usage: run ./ci.sh to trigger a CI Build.
+# Get $JENKINS_USERNAME and $JENKINS_API_TOKEN from environment (store in a .env file and use AutoEnv)
+
+JENKINS_URL="ci.rocketmade.com:8080/job/Fortify%20Android%20-%20Build%20Dev/build?token=fortifybuildtoken"
+curl -u $JENKINS_USERNAME:$JENKINS_API_TOKEN $JENKINS_URL
+```
+
+and add the following to a `.env` file in the project root:
+
+```bash
+export JENKINS_USERNAME="YOUR-USERNAME-GOES-HERE"
+export JENKINS_API_TOKEN="YOUR-API-TOKEN-GOES-HERE"
+```
+
+To get JENKINS_API_TOKEN, log into Jenkins, click on your name in the top right corner, click `configure` on the left, then click `Show API Token..`
+
+You can now either run `source .env`, or use [AutoEnv](https://github.com/kennethreitz/autoenv) to automatically source your `.env` files when you `cd` into your project.
+
+Run `./ci.sh` to remotely trigger a CI build.
