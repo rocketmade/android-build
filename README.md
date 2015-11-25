@@ -124,6 +124,7 @@ Enter the following script into the `Execute shell` section:
 export ANDROID_HOME="/Users/ci/Android/android-sdk-macosx"
 export JAVA_HOME=$(/usr/libexec/java_home)
 
+./gradlew clean
 ./gradlew assembleDebug
 ./gradlew crashlyticsUploadDistributionDebug
 
